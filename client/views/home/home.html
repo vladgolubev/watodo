@@ -7,6 +7,8 @@
   </div>
   <div class="demo-charts mdl-color--blue-grey-500 mdl-color-text--white mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-grid">
     <h3>Задачі у вільний час</h3>
-    {{> Card title="Намалювати вид з вікна" color="mdl-color--blue-grey-200"}}
+    {{#each tasks}}
+      {{> Card title=title from=from to=to color="mdl-color--blue-grey-200"}}
+    {{/each}}
   </div>
 </template>
