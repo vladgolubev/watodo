@@ -12,6 +12,8 @@ Template.Organizer.events
       to: tmpl.$('#to').val()
     }
 
+    Router.go '/'
+
 
 Template.Organizer.helpers
   tasks: ->
