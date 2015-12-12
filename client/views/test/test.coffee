@@ -17,4 +17,8 @@ Template.Test.events
             answer: $(radio).parent().text().trim()
           }
 
-    console.log results
+    Answers.insert
+      userId: Meteor.userId()
+      answers: results
+
+    Router.go '/'

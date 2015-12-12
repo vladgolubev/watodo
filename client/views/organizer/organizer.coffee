@@ -7,6 +7,7 @@ Template.Organizer.events
     taskName = tmpl.$("#title").val()
 
     Tasks.insert {
+      userId: Meteor.userId()
       title: taskName
       from: tmpl.$('#from').val()
       to: tmpl.$('#to').val()

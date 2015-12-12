@@ -1,3 +1,3 @@
 Template.Home.helpers
   tasks: ->
-    Tasks.find()
+    Tasks.find({userId: Meteor.userId()})
