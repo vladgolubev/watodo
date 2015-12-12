@@ -14,3 +14,13 @@ Router.map ->
 
   @route '/test',
     name: 'Test'
+
+  @route '/auth',
+    name: 'Authorization'
+
+if not Meteor.isServer
+  Router.onBeforeAction ->
+    if not (Meteor.user() or Meteor.loggingIn())
+      Router.go '/auth'
+    @next()
+  , except: ['auth']
