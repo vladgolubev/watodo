@@ -1,3 +1,24 @@
 <template name="Test">
-  Test is here...
+
+    <div id="firstdiv">
+        <h2>Перший тест</h2>
+
+        {{#each questions}}
+            <h4>{{question}}</h4>
+            {{#let questionname = question}}
+                {{#each options}}
+                    <span>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                    <input type="radio" class="mdl-radio__button" name="{{questionname}}">
+                    {{a .}}{{.}}
+                </label>
+               </span>
+                {{/each}}
+            {{/let}}
+        {{/each}}</div>
+    <div id="seconddiv">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+            Підтвердити
+        </button>
+    </div>
 </template>

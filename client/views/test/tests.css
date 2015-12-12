@@ -1,0 +1,21 @@
+h4 {
+    width: 100%;
+    display: block;
+}
+
+.mdl-radio {
+    margin: 2%;
+}
+
+#firstdiv {
+    width: 100%;
+}
+
+#seconddiv {
+    display: block;
+    margin: 4% auto;
+}
+
+button {
+    margin: 10%;
+}
