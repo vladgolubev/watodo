@@ -9,3 +9,5 @@ Router.map ->
   @route '/organizer',
     name: 'Organizer'
 
+  @route '/todo-choose',
+    name: 'GetTodo'
