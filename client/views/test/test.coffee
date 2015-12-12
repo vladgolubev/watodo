@@ -17,7 +17,7 @@ Template.Test.events
             answer: $(radio).parent().text().trim()
           }
 
-    Answers.insert
+    Answers.upsert
       userId: Meteor.userId()
       answers: results
 
