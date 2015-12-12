@@ -5,3 +5,7 @@ Router.map ->
 
   @route '/',
     name: 'Home'
+
+  @route '/organizer',
+    name: 'Organizer'
+
