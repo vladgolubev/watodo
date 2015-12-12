@@ -1,24 +1,29 @@
 <template name="Test">
-
     <div id="firstdiv">
-        <h2>Перший тест</h2>
-
-        {{#each questions}}
-            <h4>{{question}}</h4>
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <h1 class="mdl-card__title-text">Перший тест</h1>
+        </div>
+        <div class="mdl-card__supporting-text">
+          {{#each questions}}
+            <h5>{{question}}</h5>
             {{#let questionname = question}}
-                {{#each options}}
-                    <span>
+              {{#each options}}
+                <span>
                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-                    <input type="radio" class="mdl-radio__button" name="{{questionname}}">
-                    {{a .}}{{.}}
+                  <input type="radio" class="mdl-radio__button" name="{{questionname}}">
+                  {{a .}}{{.}}
                 </label>
                </span>
-                {{/each}}
+              {{/each}}
             {{/let}}
-        {{/each}}</div>
-    <div id="seconddiv">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-            Підтвердити
-        </button>
+          {{/each}}
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+            Зберегти результат
+          </button>
+        </div>
+      </div>
     </div>
 </template>
