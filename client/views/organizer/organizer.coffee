@@ -1,13 +1,18 @@
-Template.Organizer.onCreated ->
-  @taskCreating = new ReactiveVar false
+Template.Organizer.onRendered ->
+  pickerFrom = new Pikaday(field: $('#from')[0])
+  pickerTo = new Pikaday(field: $('#to')[0])
 
 Template.Organizer.events
   'click .add-task': (e, tmpl) ->
-    tmpl.taskCreating.set true
+    taskName = tmpl.$("#title").val()
+
+    Tasks.insert {
+      title: taskName
+      from: tmpl.$('#from').val()
+      to: tmpl.$('#to').val()
+    }
 
 
 Template.Organizer.helpers
   tasks: ->
     Tasks.find()
-  taskCreating: ->
-    Template.instance().taskCreating.get()

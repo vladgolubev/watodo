@@ -29,5 +29,5 @@ less
 useraccounts:bootstrap
 accounts-base
 msavin:mongol
-rajit:bootstrap3-datepicker
 reactive-var
+richsilv:pikaday
