@@ -1,17 +1,24 @@
 <template name="Organizer">
   <div class="organizer">
-
-    <div class="mdl-textfield mdl-js-textfield">
-      <input class="mdl-textfield__input" type="text" id="title">
-      <label class="mdl-textfield__label" for="title">Назва завдання</label>
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Додати обов’язкове завдання</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="title">
+          <label class="mdl-textfield__label" for="title">Назва завдання</label>
+        </div>
+        <input type="text" class="mdl-textfield__input datepicker form-control" id="from">
+        <span>Дата початку</span>
+        <input type="text" class="mdl-textfield__input datepicker form-control" id="to">
+        <span>Дата закінчення</span>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <button class="add-task mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          Додати завдання
+        </button>
+      </div>
     </div>
-    <input type="text" class="datepicker form-control" id="from">
-    <input type="text" class="datepicker form-control" id="to">
-    <br>
-
-    <button class="add-task mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-      Додати завдання
-    </button>
-
   </div>
 </template>
