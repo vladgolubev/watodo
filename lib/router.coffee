@@ -11,3 +11,6 @@ Router.map ->
 
   @route '/todo-choose',
     name: 'GetTodo'
+
+  @route '/test',
+    name: 'Test'
