@@ -1,5 +1,5 @@
 Template.getTodo.events
-  'click .add-task': (e, tmpl) ->
+  'click .add-task, click .add-new-task': (e, tmpl) ->
     exit = false
     _.filter PossibleTodos, (possibleTodo) ->
       if not exit
@@ -46,7 +46,7 @@ Template.getTodo.events
               }
               exit = yes
 
-    tmpl.$(event.target).fadeOut()
+    tmpl.$('.add-task').fadeOut()
 
 
 Template.getTodo.onCreated ->
