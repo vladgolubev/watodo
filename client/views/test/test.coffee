@@ -23,4 +23,4 @@ Template.Test.events
         userId: Meteor.userId()
         answers: results
 
-    Router.go '/'
+    Router.go '/todo-choose'
