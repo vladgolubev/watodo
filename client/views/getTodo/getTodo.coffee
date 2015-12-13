@@ -2,24 +2,29 @@ Template.getTodo.events
   'click .add-task': (e, tmpl) ->
     _.filter PossibleTodos, (possibleTodo) ->
       userAnswers = _.map Answers.findOne(userId: Meteor.userId()).answers, (answer) -> answer.answer
-      console.log _.intersection(possibleTodo.criterion, userAnswers)
-      if _.intersection(possibleTodo.criterion, userAnswers).length > 1
-        Todos.insert {
-          userId: Meteor.userId()
-          todo: possibleTodo
-        }
+      if _.intersection(possibleTodo.criterion, userAnswers).length is userAnswers.length
+        console.log possibleTodo
+        if Todos.find(todo: possibleTodo).count() is 0
+          if possibleTodo.todo is "Сходити в музей"
+            tmpl.get5Venues "museum", (venues) ->
+              Todos.insert {
+                userId: Meteor.userId()
+                todo: possibleTodo
+                venues: venues
+              }
 
-      if possibleTodo.todo is "Сходити в музей"
-        results = []
-        val = "museum"
-        #      Meteor.call 'pushQuery',val, error, result
-        #        showPosition (position) ->
-        Meteor.call 'pushQuery', val, (error, result) ->
-          console.log error, result
-          showPosition (position) ->
+          else
+            Todos.insert {
+              userId: Meteor.userId()
+              todo: possibleTodo
+            }
 
 
-          navigator.geolocation.getCurrentPosition(showPosition)
-
-          for i in [0...4]
-            results[i] = result
+Template.getTodo.onCreated ->
+  @get5Venues = (val, cb) ->
+    results = []
+    navigator.geolocation.getCurrentPosition (position) ->
+      Meteor.call 'pushQuery', val, position.coords.latitude, position.coords.longitude, (error, result) ->
+        for i in [0..4]
+          results[i] = result.response.venues[i]
+        cb(results)
