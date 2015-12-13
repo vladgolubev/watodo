@@ -18,6 +18,11 @@ Router.map ->
   @route '/auth',
     name: 'Authorization'
 
+  @route '/todoitem/:id',
+    name: 'TodoItem'
+    data: ->
+      @params.id
+
 if not Meteor.isServer
   Router.onBeforeAction ->
     if not (Meteor.user() or Meteor.loggingIn())
