@@ -4,4 +4,5 @@ Template.TodoItem.onRendered ->
 Template.TodoItem.helpers
   todo: ->
     todoId = Template.instance().data
-    Todos.find(_id: todoId)
+    console.log Todos.findOne(_id: todoId)
+    Todos.findOne(_id: todoId)
