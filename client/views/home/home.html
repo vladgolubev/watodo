@@ -30,4 +30,8 @@
             {{> Card title=this.todo.todo color="mdl-color--blue-grey-200"}}
         {{/each}}
     </div>
+    {{#each todos}}
+      {{> Card todoid=this._id class="todoitem" title=this.todo.todo color="mdl-color--blue-grey-200"}}
+    {{/each}}
+  </div>
 </template>
