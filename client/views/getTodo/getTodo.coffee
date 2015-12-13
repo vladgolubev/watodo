@@ -1,6 +1,7 @@
 Template.getTodo.events
   'click .add-task, click .add-new-task': (e, tmpl) ->
     exit = false
+    tmpl.displayLastTodo.set true
     _.filter PossibleTodos, (possibleTodo) ->
       if not exit
         userAnswers = _.map Answers.findOne(userId: Meteor.userId()).answers, (answer) -> answer.answer
@@ -50,6 +51,7 @@ Template.getTodo.events
 
 
 Template.getTodo.onCreated ->
+  @displayLastTodo = new ReactiveVar false
   @get5Venues = (val, cb) ->
     results = []
     navigator.geolocation.getCurrentPosition (position) ->
@@ -60,6 +62,8 @@ Template.getTodo.onCreated ->
 
 
 Template.getTodo.helpers
+  displayLastTodo: ->
+    Template.instance().displayLastTodo.get()
   todos: ->
     todos = Todos.find(userId: Meteor.userId())
     _.last(todos.fetch(), 1)
