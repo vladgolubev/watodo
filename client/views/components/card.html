@@ -4,7 +4,10 @@
       <h2 class="mdl-card__title-text">
         {{title}} {{#if from}} ({{from}} - {{to}}){{/if}}
       </h2>
-      {{> quickRemoveButton collection=collection _id=todoid}}
+      <div class="mdl-layout-spacer"></div>
+      {{#quickRemoveButton collection=collection _id=todoid}}
+        <i class="material-icons">close</i>
+      {{/quickRemoveButton}}
     </div>
   </div>
 </template>

@@ -21,6 +21,4 @@ Template.Home.events
     Router.go "/todo-choose"
 
 Template.Home.onRendered ->
-  $('.mdl-card__title button').addClass('mdl-button')
-                              .addClass('mdl-js-button')
-                              .addClass('mdl-color-text--white')
+  $('.mdl-card__title button').addClass('mdl-button').addClass('mdl-js-button').addClass('remove-task-button')
