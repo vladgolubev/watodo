@@ -22,6 +22,8 @@ Template.getTodo.events
               }
               exit = yes
 
+    tmpl.$(event.target).fadeOut()
+
 
 Template.getTodo.onCreated ->
   @get5Venues = (val, cb) ->

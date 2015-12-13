@@ -1,10 +1,42 @@
+.demo-card-event.mdl-card {
+  height: 256px;
+  width: 32% !important;
+  margin: 5px !important;
+}
+
+.mdl-card__supporting-text.venues-wrapper {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+}
+
 .get-todo {
   width: 100%;
 
   .add-task {
     width: 100%;
     font-size: 3rem;
-    min-height: 50vh;
+    min-height: 25vh;
     margin: auto;
+  }
+
+  .demo-card-event > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .demo-card-event > .mdl-card__title {
+    align-items: flex-start;
+  }
+  .demo-card-event > .mdl-card__title > h4 {
+    margin-top: 0;
+  }
+  .demo-card-event > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+  .demo-card-event > .mdl-card__title,
+  .demo-card-event > .mdl-card__actions,
+  .demo-card-event > .mdl-card__actions > .mdl-button {
+    color: #fff;
   }
 }
