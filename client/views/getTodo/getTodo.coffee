@@ -2,7 +2,7 @@ Template.getTodo.events
   'click .add-task, click .add-new-task': (e, tmpl) ->
     exit = false
     tmpl.displayLastTodo.set true
-    _.filter PossibleTodos, (possibleTodo) ->
+    _.filter _.shuffle(PossibleTodos), (possibleTodo) ->
       if not exit
         userAnswers = _.map Answers.findOne(userId: Meteor.userId()).answers, (answer) -> answer.answer
         if _.intersection(possibleTodo.criterion, userAnswers).length is userAnswers.length
