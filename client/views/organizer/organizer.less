@@ -1,11 +1,18 @@
 .organizer {
-
   margin: 0 auto;
-
   .demo-card-wide > .mdl-card__title {
-
     height: 100px;
     padding-left: 50px;
-    background: url('http://i.imgur.com/DP9igEU.jpg?1') center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),
+    url('/images/notebook.png') center / cover;
+  }
+
+  .datepicker-inputs {
+    display: flex;
+    flex-direction: row;
+    .datepicker {
+      width: 50%;
+    }
   }
 }
