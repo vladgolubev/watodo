@@ -19,3 +19,8 @@ Template.Home.events
 
   'click #buttonAddTodo': (event, tmpl)->
     Router.go "/todo-choose"
+
+Template.Home.onRendered ->
+  $('.mdl-card__title button').addClass('mdl-button')
+                              .addClass('mdl-js-button')
+                              .addClass('mdl-color-text--white')

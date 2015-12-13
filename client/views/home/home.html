@@ -12,7 +12,7 @@
     {{/if}}
 
     {{#each tasks}}
-      {{> TaskCard todoid=this._id title=title from=from to=to color="mdl-color--teal-200"}}
+      {{> Card collection="Tasks" todoid=this._id title=title from=from to=to color="mdl-color--teal-200"}}
     {{/each}}
   </div>
   <div
@@ -28,7 +28,7 @@
     {{/if}}
 
     {{#each todos}}
-      {{> Card todoid=this._id class="todoitem" title=this.todo.todo color="mdl-color--blue-grey-200"}}
+      {{> Card collection="Todos" todoid=this._id class="todoitem" title=this.todo.todo color="mdl-color--blue-grey-200"}}
     {{/each}}
   </div>
 </template>
