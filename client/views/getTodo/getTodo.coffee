@@ -15,6 +15,30 @@ Template.getTodo.events
                   todo: possibleTodo
                   venues: venues
                 }
+            else if possibleTodo.todo is "Позаймайся в тренажерному залі"
+              exit = yes
+              tmpl.get5Venues "gym", (venues) ->
+                Todos.insert {
+                  userId: Meteor.userId()
+                  todo: possibleTodo
+                  venues: venues
+                }
+            else if possibleTodo.todo is "Прогуляйся в навушниках до найвіддаленішого супермаркета"
+              exit = yes
+              tmpl.get5Venues "supermarket", (venues) ->
+                Todos.insert {
+                  userId: Meteor.userId()
+                  todo: possibleTodo
+                  venues: venues
+                }
+            else if possibleTodo.todo is "Подивись разом з другом фільм в кінотеатрі"
+              exit = yes
+              tmpl.get5Venues "cinema", (venues) ->
+                Todos.insert {
+                  userId: Meteor.userId()
+                  todo: possibleTodo
+                  venues: venues
+                }
             else
               Todos.insert {
                 userId: Meteor.userId()
