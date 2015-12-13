@@ -4,8 +4,25 @@ Template.getTodo.events
       userAnswers = _.map Answers.findOne(userId: Meteor.userId()).answers, (answer) -> answer.answer
       console.log _.intersection(possibleTodo.criterion, userAnswers)
       if _.intersection(possibleTodo.criterion, userAnswers).length > 1
-        alert possibleTodo.todo
         Todos.insert {
           userId: Meteor.userId()
           todo: possibleTodo
         }
+
+      if possibleTodo.todo is "Сходити в музей"
+        results = []
+        val = "museum"
+        #      Meteor.call 'pushQuery',val, error, result
+        #        showPosition (position) ->
+        Meteor.call 'pushQuery', val, (error, result) ->
+          console.log error, result
+          showPosition (position) ->
+#x.innerHTML = "Latitude: " + position.coords.latitude +
+#"<br>Longitude: " + position.coords.longitude
+
+          navigator.geolocation.getCurrentPosition(showPosition)
+
+          for i in [0...4]
+            results[i] = result
+
+
