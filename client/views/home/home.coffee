@@ -6,7 +6,7 @@ Template.Home.helpers
   iftasksnull:->
     Tasks.find({userId: Meteor.userId()}).count() is 0
   iftodosnull:->
-    Todos.find({userId: Meteor.userId()}).count() is 0    Todos.find({userId: Meteor.userId()})
+    Todos.find({userId: Meteor.userId()}).count() is 0
 
 
 Template.Home.events
