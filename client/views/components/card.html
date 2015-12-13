@@ -1,7 +1,9 @@
 <template name="Card">
   <div data-todoid="{{todoid}}" class="{{class}} demo-card-wide mdl-card mdl-shadow--2dp {{color}}">
     <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">{{title}} {{#if from}} ({{from}} - {{to}}){{/if}}</h2>
+      <h2 class="mdl-card__title-text">
+        {{title}} {{#if from}} ({{from}} - {{to}}){{/if}}
+      </h2>
     </div>
   </div>
 </template>

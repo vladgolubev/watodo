@@ -28,7 +28,7 @@
     {{/if}}
 
     {{#each todos}}
-      {{> Card title=this.todo.todo color="mdl-color--blue-grey-200"}}
+      {{> Card todoid=this._id class="todoitem" title=this.todo.todo color="mdl-color--blue-grey-200"}}
     {{/each}}
   </div>
 </template>
