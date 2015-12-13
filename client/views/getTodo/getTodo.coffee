@@ -24,5 +24,3 @@ Template.getTodo.events
 
           for i in [0...4]
             results[i] = result
-
-
