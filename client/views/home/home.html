@@ -6,7 +6,7 @@
     </div>
 
     {{#if iftasksnull}}
-      <button id="buttonAddTask" class="mdl-button mdl-js-button mdl-button--raised mdl-color-text--white">
+      <button id="buttonAddTask" class="mdl-button mdl-js-button mdl-js-ripple-effect  mdl-color-text--white">
         Запланувати завдання
       </button>
     {{/if}}
@@ -21,8 +21,8 @@
       <h3 class="mdl-color-text--white">Задачі у вільний час</h3>
     </div>
 
-    {{#if iftasksnull}}
-      <button id="buttonAddTodo" class="mdl-button mdl-js-button mdl-button--raised mdl-color-text--white">
+    {{#if iftodosnull}}
+      <button id="buttonAddTodo" class="mdl-button mdl-js-button mdl-js-ripple-effect   mdl-color-text--white">
         Згенерувати завдання
       </button>
     {{/if}}
@@ -30,5 +30,5 @@
     {{#each todos}}
       {{> Card title=this.todo.todo color="mdl-color--blue-grey-200"}}
     {{/each}}
-  </div
+  </div>
 </template>

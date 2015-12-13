@@ -13,3 +13,9 @@ Template.Home.events
   'click .todoitem': (event, tmpl) ->
     selectedTodoId = tmpl.$(event.currentTarget).data('todoid')
     Router.go "/todoitem/#{selectedTodoId}"
+
+  'click #buttonAddTask': (event, tmpl)->
+    Router.go "/organizer"
+
+  'click #buttonAddTodo': (event, tmpl)->
+    Router.go "/todo-choose"
