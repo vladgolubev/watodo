@@ -17,8 +17,7 @@ Template.getTodo.events
         Meteor.call 'pushQuery', val, (error, result) ->
           console.log error, result
           showPosition (position) ->
-#x.innerHTML = "Latitude: " + position.coords.latitude +
-#"<br>Longitude: " + position.coords.longitude
+
 
           navigator.geolocation.getCurrentPosition(showPosition)
 
