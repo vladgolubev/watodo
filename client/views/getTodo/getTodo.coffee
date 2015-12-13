@@ -67,3 +67,5 @@ Template.getTodo.helpers
   todos: ->
     todos = Todos.find(userId: Meteor.userId())
     _.last(todos.fetch(), 1)
+  hasAnswers: ->
+    Answers.find(userId: Meteor.userId()).count() > 0

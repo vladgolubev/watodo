@@ -1,8 +1,24 @@
 <template name="getTodo">
   <div class="get-todo">
-    <button class="add-task mdl-button mdl-js-button mdl-button--primary">
-      Отримати нове завдання
-    </button>
+    {{#if hasAnswers}}
+      <button class="add-task mdl-button mdl-js-button mdl-button--primary">
+        Receive a pastime recommendation
+      </button>
+    {{else}}
+      <div class="notests mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">No test results...</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          Plese, pass the test in order to get personalized recommendations
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a onclick="Router.go('/test')" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Pass the test
+          </a>
+        </div>
+      </div>
+    {{/if}}
   </div>
   {{#if displayLastTodo}}
     {{#each todos}}
