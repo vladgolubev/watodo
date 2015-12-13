@@ -1,7 +1,21 @@
 <template name="getTodo">
-    <div class="get-todo">
-      <button class="add-task mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-        Отримати завдання
-      </button>
-    </div>
+  <div class="get-todo">
+    <button class="add-task mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+      Отримати завдання
+    </button>
+  </div>
+  {{#each todos}}
+    <p>
+      {{todo.todo}}
+    </p>
+    <ul>
+      {{#each venues}}
+        <li>
+          <span><strong>{{this.name}}</strong></span>
+          <span>{{this.location.address}}</span>
+          <span>{{this.contact.phone}}</span>
+        </li>
+      {{/each}}
+    </ul>
+  {{/each}}
 </template>
