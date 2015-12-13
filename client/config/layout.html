@@ -1,6 +1,6 @@
 <template name="Layout">
   <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <header class="demo-header mdl-layout__header mdl-color--grey-800 mdl-color-text--grey-100">
+    <header class="demo-header mdl-layout__header mdl-color--blue-grey-900 mdl-color-text--grey-100">
       <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">Watodo</span>
 
@@ -16,10 +16,7 @@
     <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
       <header class="demo-drawer-header">
         <img src="images/user.jpg" class="demo-avatar">
-
-        <div class="demo-avatar-dropdown">
-          <span>proffstore@gmail.com</span>
-        </div>
+        <h5>{{currentUser.username}}</h5>
       </header>
       <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
         <a class="mdl-navigation__link" href="/">
