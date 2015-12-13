@@ -12,7 +12,7 @@
     {{/if}}
 
     {{#each tasks}}
-      {{> Card title=title from=from to=to color="mdl-color--teal-200"}}
+      {{> TaskCard todoid=this._id title=title from=from to=to color="mdl-color--teal-200"}}
     {{/each}}
   </div>
   <div
