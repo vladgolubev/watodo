@@ -1,20 +1,33 @@
 <template name="Home">
-  <div class="demo-charts urgent-tasks mdl-color--teal-500 mdl-color-text--white mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-grid">
-    <div class="mdl-card__title block-title">
-      <h3 class="mdl-color-text--white">Обов’язкові задачі</h3>
-    </div>
+    <div class="demo-charts urgent-tasks mdl-color--teal-500 mdl-color-text--white mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-grid">
+        <div class="mdl-card__title block-title">
+            <h3 class="mdl-color-text--white">Обов’язкові задачі</h3>
+        </div>
 
-    {{#each tasks}}
-      {{> Card title=title from=from to=to color="mdl-color--teal-200"}}
-    {{/each}}
-  </div>
-  <div
-      class="demo-charts free-time-tasks mdl-color--blue-grey-500 mdl-color-text--white mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-grid">
-    <div class="mdl-card__title block-title">
-      <h3 class="mdl-color-text--white">Задачі у вільний час</h3>
+        {{#if iftasksnull}}
+            <button id="buttonAddTask" class="mdl-button mdl-js-button mdl-button--raised mdl-color-text--white">
+                Запланувати завдання
+            </button>
+        {{/if}}
+
+        {{#each tasks}}
+            {{> Card title=title from=from to=to color="mdl-color--teal-200"}}
+        {{/each}}
     </div>
-    {{#each todos}}
-      {{> Card title=this.todo.todo color="mdl-color--blue-grey-200"}}
-    {{/each}}
-  </div>
+    <div
+            class="demo-charts free-time-tasks mdl-color--blue-grey-500 mdl-color-text--white mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-grid">
+        <div class="mdl-card__title block-title">
+            <h3 class="mdl-color-text--white">Задачі у вільний час</h3>
+        </div>
+
+        {{#if iftasksnull}}
+            <button id="buttonAddTodo" class="mdl-button mdl-js-button mdl-button--raised mdl-color-text--white">
+                Згенерувати завдання
+            </button>
+        {{/if}}
+
+        {{#each todos}}
+            {{> Card title=this.todo.todo color="mdl-color--blue-grey-200"}}
+        {{/each}}
+    </div>
 </template>

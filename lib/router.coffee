@@ -18,6 +18,7 @@ Router.map ->
   @route '/auth',
     name: 'Authorization'
 
+
 if not Meteor.isServer
   Router.onBeforeAction ->
     if not (Meteor.user() or Meteor.loggingIn())
